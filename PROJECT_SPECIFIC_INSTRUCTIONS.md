@@ -1,0 +1,6 @@
+- All UI must be built from the project reusable component library in `components/ui` or thin feature components composed from it.
+- All visual constants must come from the design system. Keep colors, spacing, radii, motion values, and domain color scales in the shared design-token layer instead of feature files.
+- Keep padding, control heights, gaps, and border radii consistent across components by reusing existing UI primitives and tokenized size scales. Before introducing a new spacing, size, or radius value, check whether the closest existing component/token already solves the case.
+- If a screen needs a new visual pattern, add or extend a reusable UI component first; do not create one-off page styling.
+- If a new visual value is needed, add a semantic token or typed design-system export first; do not hardcode hex colors, radii, shadows, or spacing in app/admin/marketing components.
+- When evaluating marketing performance or proposing SEO promotion work, read `docs/marketing-analytics.md` and use the aggregate `npm run marketing:report` views. Never request or expose raw user, lead, or device identifiers.
