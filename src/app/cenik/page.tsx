@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 
-import { ButtonLink } from "@/components/ui/button-link";
-import { Container } from "@/components/ui/container";
+import { PricingSection } from "@/components/sections/pricing-section";
 import { PageIntro } from "@/components/ui/page-intro";
 import { SiteFrame } from "@/components/ui/site-frame";
-import { siteConfig } from "@/lib/site-data";
 
 export const metadata: Metadata = { title: "Ceník" };
 
@@ -14,17 +12,11 @@ export default function PricingPage() {
       <PageIntro
         eyebrow="LINA STUDIO OPAVA"
         title="Ceník"
-        lead="Ceník lekcí připravujeme."
+        lead="Vyberte si lekci nebo zvýhodněný balíček."
         image="/images/detail-plaque.jpg"
         alt="Světlý interiér Lina Studio"
       />
-      <section className="simple-cta">
-        <Container>
-          <ButtonLink href={siteConfig.bookingUrl} external>
-            Rezervovat lekci
-          </ButtonLink>
-        </Container>
-      </section>
+      <PricingSection />
     </SiteFrame>
   );
 }

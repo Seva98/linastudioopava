@@ -8,12 +8,12 @@ export function HeroSection() {
   return (
     <section className="hero-section">
       <MediaFrame
-        src="/images/hero-studio.jpg"
+        src="/images/hero-studio-client-highres.png"
         alt="Světlý zrcadlový sál s reformery a baletními tyčemi"
         className="hero-section__media"
         imageClassName="hero-section__image"
         sizes="100vw"
-        priority
+        eager
       />
       <div className="hero-section__veil" />
       <Container className="hero-section__inner">
@@ -25,8 +25,8 @@ export function HeroSection() {
           </h1>
           <p>PILATES. BARRE. REFORMER.<br />VÁŠ PROSTOR PRO POHYB.</p>
           <div className="hero-section__actions">
-            <ButtonLink href={siteConfig.bookingUrl} external>Rezervovat lekci</ButtonLink>
-            <ButtonLink href="/studio" variant="outline">Prozkoumat studio</ButtonLink>
+            <ButtonLink href={siteConfig.bookingUrl} external>Rezervuj lekci</ButtonLink>
+            <ButtonLink href="/studio" variant="outline">Studio</ButtonLink>
           </div>
         </div>
       </Container>

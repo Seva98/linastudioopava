@@ -41,6 +41,49 @@ test("development component gallery is available", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1, name: "Design systém" })).toBeVisible();
 });
 
+test("team page contains every supplied instructor profile", async ({ page }) => {
+  await page.goto("/tym");
+  for (const name of ["Karolína Valalíková", "Sára Nemeth", "Mirek Danišovič", "Kateřina Ostapenko"]) {
+    await expect(page.getByRole("heading", { level: 2, name })).toBeVisible();
+  }
+});
+
+test("desktop instructor portraits keep one size while alternating sides", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop", "desktop-only alternating layout");
+  await page.goto("/tym");
+  const profiles = page.locator(".instructor-profile");
+  const widths: number[] = [];
+
+  for (let index = 0; index < await profiles.count(); index += 1) {
+    const profile = profiles.nth(index);
+    const imageBox = await profile.locator(".instructor-profile__media").boundingBox();
+    const contentBox = await profile.locator(".instructor-profile__content").boundingBox();
+    expect(imageBox).not.toBeNull();
+    expect(contentBox).not.toBeNull();
+    widths.push(imageBox!.width);
+    expect(index % 2 === 0 ? imageBox!.x < contentBox!.x : imageBox!.x > contentBox!.x).toBe(true);
+  }
+
+  expect(Math.max(...widths) - Math.min(...widths)).toBeLessThan(1);
+});
+
+test("pricing tables and studio gallery are populated", async ({ page }) => {
+  await page.goto("/cenik");
+  await expect(page.locator(".pricing-card table")).toHaveCount(3);
+  await expect(page.locator(".pricing-card tbody tr")).toHaveCount(9);
+
+  await page.goto("/studio");
+  await expect(page.locator(".studio-gallery__item")).toHaveCount(9);
+});
+
+test("contact details are followed by a responsive Google map", async ({ page }) => {
+  await page.goto("/kontakt");
+  const map = page.getByTitle("Mapa Lina Studio Opava");
+  await expect(map).toBeVisible();
+  await expect(map).toHaveAttribute("src", /maps\.google\.com\/maps/);
+  await expect(map).toHaveAttribute("src", /q=49\.9405867,17\.8974933/);
+});
+
 test("content images are optimized, described, and load after scrolling", async ({ page }) => {
   await page.goto("/");
   await page.locator("footer").scrollIntoViewIfNeeded();

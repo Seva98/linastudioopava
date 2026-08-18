@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Montserrat } from "next/font/google";
+import { Lora, Urbanist } from "next/font/google";
 
 import "./globals.css";
 
-const montserrat = Montserrat({
+const urbanist = Urbanist({
   variable: "--font-body",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
+const lora = Lora({
   variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  subsets: ["latin", "latin-ext"],
+  weight: "variable",
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="cs" className={`${montserrat.variable} ${cormorant.variable}`}>
+    <html lang="cs" className={`${urbanist.variable} ${lora.variable}`}>
       <body>{children}</body>
     </html>
   );

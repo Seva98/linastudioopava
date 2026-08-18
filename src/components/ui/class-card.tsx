@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { ArrowLink } from "./arrow-link";
 import { MediaFrame } from "./media-frame";
 
@@ -11,10 +13,7 @@ type ClassCardProps = {
 function MovementMark() {
   return (
     <span className="movement-mark" aria-hidden="true">
-      <svg viewBox="0 0 40 40">
-        <path d="M20 7c3 4 3 8 0 13-3-5-3-9 0-13Zm0 13c5-3 9-3 13 0-4 3-8 3-13 0Zm0 0c3 5 3 9 0 13-3-4-3-8 0-13Zm0 0c-5 3-9 3-13 0 4-3 8-3 13 0Z" />
-        <circle cx="20" cy="20" r="3" />
-      </svg>
+      <Image src="/brand/lina-symbol.svg" alt="" width={529} height={488} />
     </span>
   );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { TeamSection } from "@/components/sections/team-section";
+import { InstructorProfiles } from "@/components/sections/instructor-profiles";
 import { PageIntro } from "@/components/ui/page-intro";
 import { SiteFrame } from "@/components/ui/site-frame";
 
@@ -12,11 +12,11 @@ export default function TeamPage() {
       <PageIntro
         eyebrow="LINA STUDIO OPAVA"
         title="Tým"
-        lead="Naše lektorky vás provedou každou lekcí s respektem, péčí a důrazem na správný pohyb."
-        image="/images/team-misa.jpg"
-        alt="Lektorka Lina Studio"
+        lead="Náš tým vás provede každou lekcí s respektem, péčí a důrazem na správný pohyb."
+        image="/images/hero-studio-client-highres.png"
+        alt="Světlý sál Lina Studio"
       />
-      <TeamSection showAllLink={false} />
+      <InstructorProfiles />
     </SiteFrame>
   );
 }

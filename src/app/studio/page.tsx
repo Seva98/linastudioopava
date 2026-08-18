@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { AboutSection } from "@/components/sections/about-section";
-import { FeelingGallery } from "@/components/sections/feeling-gallery";
+import { StudioGallery } from "@/components/sections/studio-gallery";
 import { PageIntro } from "@/components/ui/page-intro";
 import { SiteFrame } from "@/components/ui/site-frame";
 
@@ -14,11 +14,11 @@ export default function StudioPage() {
         eyebrow="LINA STUDIO OPAVA"
         title="Studio"
         lead="Klidné zázemí pro soustředění, péči o tělo a radost z pohybu."
-        image="/images/hero-studio.jpg"
+        image="/images/hero-studio-client-highres.png"
         alt="Zrcadlový sál Lina Studio v Opavě"
       />
       <AboutSection link={false} />
-      <FeelingGallery />
+      <StudioGallery />
     </SiteFrame>
   );
 }

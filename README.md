@@ -26,3 +26,5 @@ pnpm run build
 Development uses local fixtures by default. Production intentionally shows no fabricated classes until official iSport API access is configured. Copy `.env.example` to `.env.local` and use the server-only values documented in [docs/isport-integration.md](docs/isport-integration.md).
 
 Generated placeholder photography and its prompt record are documented in [docs/image-generation.md](docs/image-generation.md).
+
+The approved fonts, palette, and client-supplied file mapping are documented in [docs/brand-assets.md](docs/brand-assets.md).

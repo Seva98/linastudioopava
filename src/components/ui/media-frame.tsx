@@ -8,7 +8,7 @@ type MediaFrameProps = {
   className?: string;
   imageClassName?: string;
   sizes?: string;
-  priority?: boolean;
+  eager?: boolean;
 };
 
 export function MediaFrame({
@@ -17,7 +17,7 @@ export function MediaFrame({
   className,
   imageClassName,
   sizes = "(max-width: 768px) 100vw, 50vw",
-  priority,
+  eager,
 }: MediaFrameProps) {
   return (
     <div className={cn("media-frame", className)}>
@@ -27,8 +27,8 @@ export function MediaFrame({
         fill
         className={cn("media-frame__image", imageClassName)}
         sizes={sizes}
-        priority={priority}
-        loading={priority ? "eager" : undefined}
+        loading={eager ? "eager" : undefined}
+        fetchPriority={eager ? "high" : undefined}
       />
     </div>
   );

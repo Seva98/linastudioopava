@@ -11,7 +11,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <Container className="site-header__inner">
-        <Logo priority />
+        <Logo eager />
         <nav className="desktop-navigation" aria-label="Hlavní navigace">
           {navigation.map((item) => (
             <Link key={item.href} href={item.href}>

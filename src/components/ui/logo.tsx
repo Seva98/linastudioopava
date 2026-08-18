@@ -5,20 +5,20 @@ import { cn } from "@/lib/cn";
 
 type LogoProps = {
   className?: string;
-  priority?: boolean;
+  eager?: boolean;
   linked?: boolean;
 };
 
-export function Logo({ className, priority, linked = true }: LogoProps) {
+export function Logo({ className, eager, linked = true }: LogoProps) {
   const logo = (
     <Image
-      src="/logo.svg"
-      alt="Studio Lina"
-      width={220}
-      height={112}
+      src="/brand/lina-studio-accent.svg"
+      alt="Lina Studio"
+      width={1009}
+      height={494}
       className={cn("site-logo", className)}
-      priority={priority}
-      loading={priority ? "eager" : undefined}
+      loading={eager ? "eager" : undefined}
+      fetchPriority={eager ? "high" : undefined}
     />
   );
 

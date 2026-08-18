@@ -18,7 +18,7 @@ export function PageIntro({ eyebrow, title, lead, image, alt }: PageIntroProps) 
           <h1>{title}</h1>
           <p>{lead}</p>
         </div>
-        <MediaFrame src={image} alt={alt} className="page-intro__media" priority />
+        <MediaFrame src={image} alt={alt} className="page-intro__media" eager />
       </Container>
     </section>
   );

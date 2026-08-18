@@ -30,11 +30,13 @@ export default function ComponentGalleryPage() {
         <section className="component-gallery__section">
           <h2>Barvy</h2>
           <div className="swatch-grid">
-            <span className="swatch swatch--canvas" />
-            <span className="swatch swatch--surface" />
-            <span className="swatch swatch--ink" />
-            <span className="swatch swatch--blue" />
-            <span className="swatch swatch--taupe" />
+            <span className="swatch swatch--canvas" aria-label="#f8f5e4" />
+            <span className="swatch swatch--blue-soft" aria-label="#c1d1d8" />
+            <span className="swatch swatch--surface-soft" aria-label="#e0dfda" />
+            <span className="swatch swatch--blue" aria-label="#9abde2" />
+            <span className="swatch swatch--taupe" aria-label="#ae9b8c" />
+            <span className="swatch swatch--separator" aria-label="#eee9dc" />
+            <span className="swatch swatch--ink" aria-label="#3f3f3f" />
           </div>
         </section>
 
