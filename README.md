@@ -21,9 +21,9 @@ pnpm test:e2e
 pnpm run build
 ```
 
-## iSport schedule
+## Zenamu schedule and prices
 
-Development uses local fixtures by default. Production intentionally shows no fabricated classes until official iSport API access is configured. Copy `.env.example` to `.env.local` and use the server-only values documented in [docs/isport-integration.md](docs/isport-integration.md).
+The homepage reads the next four public lessons from Lina Studio's Zenamu calendar. The price page derives its lesson prices from the same public source and falls back to the last verified values if Zenamu is temporarily unavailable. Responses are cached for five minutes.
 
 Generated placeholder photography and its prompt record are documented in [docs/image-generation.md](docs/image-generation.md).
 

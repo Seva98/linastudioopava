@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import { AboutSection } from "@/components/sections/about-section";
 import { StudioGallery } from "@/components/sections/studio-gallery";
+import { StudioStory } from "@/components/sections/studio-story";
 import { PageIntro } from "@/components/ui/page-intro";
 import { SiteFrame } from "@/components/ui/site-frame";
 
@@ -13,11 +13,11 @@ export default function StudioPage() {
       <PageIntro
         eyebrow="LINA STUDIO OPAVA"
         title="Studio"
-        lead="Klidné zázemí pro soustředění, péči o tělo a radost z pohybu."
+        lead="Místo, kde se pohyb potkává s elegancí, silou a klidem."
         image="/images/hero-studio-client-highres.png"
         alt="Zrcadlový sál Lina Studio v Opavě"
       />
-      <AboutSection link={false} />
+      <StudioStory />
       <StudioGallery />
     </SiteFrame>
   );

@@ -12,7 +12,7 @@ export default function PricingPage() {
       <PageIntro
         eyebrow="LINA STUDIO OPAVA"
         title="Ceník"
-        lead="Vyberte si lekci nebo zvýhodněný balíček."
+        lead="Vyberte si lekci, která vám sedne."
         image="/images/detail-plaque.jpg"
         alt="Světlý interiér Lina Studio"
       />

@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-import { getUpcomingClasses } from "@/lib/isport/get-upcoming-classes";
+import { getUpcomingClasses } from "@/lib/zenamu/get-upcoming-classes";
 import { siteConfig } from "@/lib/site-data";
 
 import { ArrowLink } from "../ui/arrow-link";

@@ -1,9 +1,12 @@
-import { pricingGroups, siteConfig } from "@/lib/site-data";
+import { siteConfig } from "@/lib/site-data";
+import { getPricingGroups } from "@/lib/zenamu/get-pricing-groups";
 
 import { ButtonLink } from "../ui/button-link";
 import { Container } from "../ui/container";
 
-export function PricingSection() {
+export async function PricingSection() {
+  const pricingGroups = await getPricingGroups();
+
   return (
     <section className="pricing-section">
       <Container>

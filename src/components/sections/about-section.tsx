@@ -10,10 +10,10 @@ export function AboutSection({ link = true }: { link?: boolean }) {
         <div className="about-section__copy">
           <SectionHeading
             eyebrow="LINA STUDIO OPAVA"
-            title="Prostor pro vědomý "
-            italic="pohyb, sílu a rovnováhu."
+            title="Pohyb, který má smysl."
+            italic="Pocit, který zůstává."
           />
-          <p>V Lina Studio propojujeme pilates, barre a reformer do funkčních lekcí, které posilují tělo, zklidňují mysl a podporují ženskou energii.</p>
+          <p>V Lina Studio propojujeme pilates, barre a reformer, který není jen módním trendem. Je to péče o tělo, které má smysl.</p>
           {link ? <ArrowLink href="/studio">O studiu</ArrowLink> : null}
         </div>
         <MediaFrame

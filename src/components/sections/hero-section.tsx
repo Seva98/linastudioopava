@@ -19,11 +19,11 @@ export function HeroSection() {
       <Container className="hero-section__inner">
         <div className="hero-section__copy">
           <h1>
-            <span>Hýbejte se.</span>
-            <span>Posilujte.</span>
-            <em>Ciťte se dobře.</em>
+            <span>Pohyb.</span>
+            <span>Síla.</span>
+            <em>Rovnováha.</em>
           </h1>
-          <p>PILATES. BARRE. REFORMER.<br />VÁŠ PROSTOR PRO POHYB.</p>
+          <p>PILATES. BARRE. REFORMER.<br />Čas pro sebe. Pro své tělo. Pro dobrý pocit.</p>
           <div className="hero-section__actions">
             <ButtonLink href={siteConfig.bookingUrl} external>Rezervuj lekci</ButtonLink>
             <ButtonLink href="/studio" variant="outline">Studio</ButtonLink>

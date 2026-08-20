@@ -975,6 +975,35 @@ h3 {
   background: var(--color-surface);
 }
 
+.studio-story {
+  padding-block: var(--space-20);
+  background: var(--color-separator);
+}
+
+.studio-story__copy {
+  display: grid;
+  max-width: 48rem;
+  margin-inline: auto;
+  gap: var(--space-5);
+  color: var(--color-muted);
+}
+
+.studio-story__statement,
+.studio-story__welcome {
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-size: var(--text-lead);
+}
+
+.studio-story__statement {
+  margin-top: var(--space-4);
+}
+
+.studio-story__welcome {
+  color: var(--color-blue-strong);
+  font-style: italic;
+}
+
 .studio-gallery__grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -1385,6 +1414,7 @@ h3 {
   }
 
   .pricing-section,
+  .studio-story,
   .studio-gallery {
     padding-block: var(--space-16);
   }

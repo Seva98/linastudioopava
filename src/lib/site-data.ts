@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Lina Studio Opava",
-  bookingUrl: "https://www.isportsystem.cz",
-  instagramUrl: "https://www.instagram.com/linastudio.opava",
-  instagramHandle: "@linastudio.opava",
+  bookingUrl: "https://app.zenamu.com/app/office/lina-studio-opava",
+  instagramUrl: "https://www.instagram.com/lina_studio_opava",
+  instagramHandle: "@lina_studio_opava",
   email: "info@linastudio.cz",
   phone: "+420 777 123 456",
   phoneHref: "+420777123456",
@@ -99,36 +99,6 @@ export const galleryItems = [
   { image: "/images/detail-balls.jpg", alt: "Modré pilates míče", position: "center" },
   { image: "/images/detail-matcha.jpg", alt: "Šálek matcha po lekci", position: "center" },
   { image: "/images/lina-brand-poster.png", alt: "Modrá grafika Lina Studio", position: "center bottom" },
-] as const;
-
-export const pricingGroups = [
-  {
-    title: "Skupinové lekce",
-    description: "Pilates na podložce a barre.",
-    items: [
-      { label: "Jednorázový vstup", price: "290 Kč" },
-      { label: "Permanentka 5 vstupů", price: "1 350 Kč" },
-      { label: "Permanentka 10 vstupů", price: "2 500 Kč" },
-    ],
-  },
-  {
-    title: "Pilates na reformeru",
-    description: "Lekce v malé skupině.",
-    items: [
-      { label: "Jednorázový vstup", price: "450 Kč" },
-      { label: "Permanentka 5 vstupů", price: "2 100 Kč" },
-      { label: "Permanentka 10 vstupů", price: "3 900 Kč" },
-    ],
-  },
-  {
-    title: "Individuální lekce",
-    description: "Lekce přizpůsobená vašim potřebám.",
-    items: [
-      { label: "Jedna osoba", price: "1 100 Kč" },
-      { label: "Dvě osoby", price: "1 500 Kč" },
-      { label: "Balíček 5 lekcí", price: "5 000 Kč" },
-    ],
-  },
 ] as const;
 
 export const studioGalleryItems = [
