@@ -18,7 +18,7 @@ export default function ClassesPage() {
         alt="Reformery připravené na lekci"
       />
       <ClassesSection showAllLink={false} />
-      <ScheduleSection />
+      <ScheduleSection tone="separator" />
     </SiteFrame>
   );
 }

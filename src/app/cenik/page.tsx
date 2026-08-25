@@ -13,7 +13,7 @@ export default function PricingPage() {
         eyebrow="LINA STUDIO OPAVA"
         title="Ceník"
         lead="Vyberte si lekci, která vám sedne."
-        image="/images/studio-reformers-detail.webp"
+        image="/images/studio-reformers-detail-v2.webp"
         alt="Reformery v Lina Studio"
       />
       <PricingSection />

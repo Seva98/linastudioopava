@@ -29,7 +29,7 @@ Both families are self-hosted at build time through `next/font` with Latin Exten
 - `public/images/studio-barre-wide.webp`: client-supplied mirrored barre studio photograph, optimized to 2048 × 1366.
 - `public/images/studio-reformers-wide.webp`: client-supplied reformer room photograph, optimized to 2400 × 1600 from the higher-resolution original.
 - `public/images/studio-barre-plants.webp`: client-supplied portrait detail of the barre room, optimized to 1600 × 2400.
-- `public/images/studio-reformers-detail.webp`: client-supplied alternate reformer room angle, optimized to 2400 × 1600.
+- `public/images/studio-reformers-detail-v2.webp`: revised client-supplied alternate reformer room angle, optimized to 2400 × 1599.
 - `public/images/team-karolina-valalikova.webp`: client-supplied Karolína Valalíková portrait, optimized to 1200 × 1800.
 - `public/images/team-sara-nemeth.webp`: client-supplied Sára Nemeth portrait, optimized to 1200 × 1649.
 - `public/images/team-mirek-danisovic.webp`: client-supplied Mirek Danišovič portrait, optimized to 1200 × 1800.

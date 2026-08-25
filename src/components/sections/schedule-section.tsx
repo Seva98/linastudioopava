@@ -25,9 +25,9 @@ function ScheduleFallback() {
   return <div className="schedule-section__fallback" aria-hidden="true"><span /><span /><span /><span /></div>;
 }
 
-export function ScheduleSection() {
+export function ScheduleSection({ tone = "surface" }: { tone?: "surface" | "separator" }) {
   return (
-    <section className="schedule-section">
+    <section className={`schedule-section${tone === "separator" ? " schedule-section--separator" : ""}`}>
       <Container className="schedule-section__grid">
         <div className="schedule-section__intro">
           <h2>Rezervujte si lekci</h2>

@@ -40,7 +40,7 @@ export const classItems = [
   {
     title: "Individuální lekce",
     description: "Individuální přístup přizpůsobený vašim potřebám a cílům.",
-    image: "/images/studio-reformers-detail.webp",
+    image: "/images/studio-reformers-detail-v2.webp",
     alt: "Detail reformerů v Lina Studio",
   },
 ] as const;
@@ -105,7 +105,7 @@ export const teamMembers = [
 ] as const;
 
 export const galleryItems = [
-  { image: "/images/studio-reformers-detail.webp", alt: "Detail předního reformeru", position: "center" },
+  { image: "/images/studio-reformers-detail-v2.webp", alt: "Detail předního reformeru", position: "center" },
   { image: "/images/studio-barre-plants.webp", alt: "Zeleň u baletních tyčí", position: "35% center" },
   { image: "/images/studio-barre-wide.webp", alt: "Zrcadlový sál Lina Studio", position: "center" },
   { image: "/images/studio-reformers-wide.webp", alt: "Řada reformerů v sále", position: "65% center" },
@@ -117,6 +117,6 @@ export const studioGalleryItems = [
   { image: "/images/studio-barre-wide.webp", alt: "Zrcadlový sál Lina Studio s baletními tyčemi", layout: "feature" },
   { image: "/images/studio-barre-plants.webp", alt: "Zeleň a baletní tyče v sále", layout: "portrait" },
   { image: "/images/studio-reformers-wide.webp", alt: "Reformery připravené na skupinovou lekci", layout: "standard" },
-  { image: "/images/studio-reformers-detail.webp", alt: "Detail reformerů v Lina Studio", layout: "standard" },
+  { image: "/images/studio-reformers-detail-v2.webp", alt: "Detail reformerů v Lina Studio", layout: "standard" },
   { image: "/images/lina-brand-poster.png", alt: "Modrá grafika Lina Studio", layout: "standard" },
 ] as const;

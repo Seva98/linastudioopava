@@ -501,6 +501,10 @@ h3 {
   padding-block: var(--space-12);
 }
 
+.schedule-section--separator {
+  background: var(--color-separator);
+}
+
 .schedule-section .button-link {
   min-height: 2rem;
   padding-block: var(--space-2);
@@ -550,6 +554,7 @@ h3 {
 }
 
 .schedule-item h3 {
+  min-height: 2.6em;
   margin-top: var(--space-2);
   font-family: var(--font-body), sans-serif;
   font-size: var(--text-small);
