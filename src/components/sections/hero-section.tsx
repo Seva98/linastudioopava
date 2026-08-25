@@ -8,8 +8,8 @@ export function HeroSection() {
   return (
     <section className="hero-section">
       <MediaFrame
-        src="/images/hero-studio-client-highres.png"
-        alt="Světlý zrcadlový sál s reformery a baletními tyčemi"
+        src="/images/studio-barre-wide.webp"
+        alt="Zrcadlový sál Lina Studio s baletními tyčemi"
         className="hero-section__media"
         imageClassName="hero-section__image"
         sizes="100vw"

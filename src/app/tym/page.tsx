@@ -13,8 +13,8 @@ export default function TeamPage() {
         eyebrow="LINA STUDIO OPAVA"
         title="Tým"
         lead="Náš tým vás provede každou lekcí s respektem, péčí a důrazem na správný pohyb."
-        image="/images/hero-studio-client-highres.png"
-        alt="Světlý sál Lina Studio"
+        image="/images/studio-barre-wide.webp"
+        alt="Zrcadlový sál Lina Studio"
       />
       <InstructorProfiles />
     </SiteFrame>

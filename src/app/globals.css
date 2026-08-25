@@ -603,7 +603,7 @@ h3 {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: clamp(1rem, 2vw, 2rem);
   padding-top: var(--space-5);
   padding-inline: 0;
@@ -1031,6 +1031,10 @@ h3 {
   grid-column: span 8;
 }
 
+.studio-gallery__item:last-child img {
+  object-position: center bottom;
+}
+
 .component-gallery {
   min-height: 100vh;
   padding-block: var(--space-16);
@@ -1121,6 +1125,12 @@ h3 {
   .team-grid {
     padding-top: 0;
     padding-inline: var(--space-12);
+  }
+
+  .team-grid > .team-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - var(--space-3));
+    justify-self: center;
   }
 
   .team-section__inner {

@@ -11,7 +11,7 @@ export function InstructorProfiles() {
           <article className="instructor-profile" key={member.name}>
             <MediaFrame
               src={member.image}
-              alt={`Zástupný portrét pro profil ${member.name}`}
+              alt={`Portrét: ${member.name}`}
               className="instructor-profile__media"
               sizes="(max-width: 768px) 100vw, 38vw"
             />

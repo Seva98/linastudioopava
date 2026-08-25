@@ -14,7 +14,7 @@ export default function StudioPage() {
         eyebrow="LINA STUDIO OPAVA"
         title="Studio"
         lead="Místo, kde se pohyb potkává s elegancí, silou a klidem."
-        image="/images/hero-studio-client-highres.png"
+        image="/images/studio-barre-wide.webp"
         alt="Zrcadlový sál Lina Studio v Opavě"
       />
       <StudioStory />

@@ -14,7 +14,7 @@ export default function ClassesPage() {
         eyebrow="PILATES. BARRE. REFORMER."
         title="Lekce"
         lead="Vyberte si lekci podle svého tempa, zkušeností a toho, co vaše tělo právě potřebuje."
-        image="/images/studio-private.jpg"
+        image="/images/studio-reformers-wide.webp"
         alt="Reformery připravené na lekci"
       />
       <ClassesSection showAllLink={false} />

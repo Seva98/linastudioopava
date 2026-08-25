@@ -8,8 +8,8 @@ export function EditorialBanner() {
   return (
     <section className="editorial-banner">
       <MediaFrame
-        src="/images/detail-barre.jpg"
-        alt="Detail dřevěné baletní tyče"
+        src="/images/studio-barre-wide.webp"
+        alt="Baletní tyče v zrcadlovém sále Lina Studio"
         className="editorial-banner__media"
         sizes="100vw"
       />

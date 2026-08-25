@@ -15,7 +15,7 @@ export function FeelingGallery() {
         </div>
         <div className="feeling-gallery__images">
           {galleryItems.map((item) => (
-            <div className="feeling-gallery__tile" key={item.image}>
+            <div className="feeling-gallery__tile" key={`${item.image}-${item.alt}`}>
               <Image
                 src={item.image}
                 alt={item.alt}

@@ -13,8 +13,8 @@ export default function ContactPage() {
         eyebrow="LINA STUDIO OPAVA"
         title="Kontakt"
         lead="Těšíme se na vás v Lina Studio Opava."
-        image="/images/studio-reformer.jpg"
-        alt="Prosluněný interiér Lina Studio"
+        image="/images/studio-reformers-detail.webp"
+        alt="Reformery v Lina Studio"
       />
       <ContactDetails />
     </SiteFrame>

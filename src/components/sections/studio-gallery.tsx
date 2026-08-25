@@ -18,7 +18,7 @@ export function StudioGallery() {
               src={item.image}
               alt={item.alt}
               className={`studio-gallery__item studio-gallery__item--${item.layout}`}
-              sizes={item.layout === "feature" || item.layout === "wide"
+              sizes={item.layout === "feature"
                 ? "(max-width: 768px) 100vw, 67vw"
                 : "(max-width: 768px) 50vw, 33vw"}
             />

@@ -17,8 +17,8 @@ export function AboutSection({ link = true }: { link?: boolean }) {
           {link ? <ArrowLink href="/studio">O studiu</ArrowLink> : null}
         </div>
         <MediaFrame
-          src="/images/studio-reformer-client-highres.png"
-          alt="Bílý pilates reformer v Lina Studio"
+          src="/images/studio-reformers-detail.webp"
+          alt="Reformery v Lina Studio"
           className="about-section__media"
         />
       </Container>

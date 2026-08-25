@@ -40,9 +40,7 @@ export function SiteFooter() {
           <p>Pilates. Barre. Reformer.</p>
         </div>
         <div className="site-footer__legal">
-          <span>Obchodní podmínky</span>
-          <span>Ochrana osobních údajů (GDPR)</span>
-          <span>Cookies</span>
+          <span>Lina Studio Opava s.r.o.</span>
           <ButtonLink href={siteConfig.bookingUrl} external>Rezervovat lekci</ButtonLink>
         </div>
       </Container>

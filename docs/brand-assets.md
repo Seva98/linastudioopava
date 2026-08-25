@@ -23,10 +23,15 @@ Both families are self-hosted at build time through `next/font` with Latin Exten
 - `public/brand/lina-studio-accent.svg`: website wordmark recolored to the approved accent `#9abde2`, used in the header and footer.
 - `public/brand/lina-symbol.svg`: original path-based Lina symbol used in lesson badges and as the application icon.
 - `public/brand/lina-symbol@3x.png`: supplied high-resolution raster symbol retained as a source asset.
-- `public/images/hero-studio-client.png`: supplied homepage hero photograph (original low-resolution source).
-- `public/images/hero-studio-client-highres.png`: enhanced high-resolution homepage hero photograph.
-- `public/images/studio-reformer-client.png`: supplied reformer photograph (original low-resolution source).
-- `public/images/studio-reformer-client-highres.png`: enhanced high-resolution reformer photograph used directly below the hero.
+- `public/images/hero-studio-client.png` and `public/images/hero-studio-client-highres.png`: previous supplied studio photograph retained as source material but no longer displayed.
+- `public/images/studio-reformer-client.png` and `public/images/studio-reformer-client-highres.png`: previous supplied reformer photograph retained as source material but no longer displayed.
 - `public/images/lina-brand-poster.png`: supplied blue brand artwork used in the gallery.
-
-Instructor photographs remain fictional placeholders until client-approved headshots are supplied.
+- `public/images/studio-barre-wide.webp`: client-supplied mirrored barre studio photograph, optimized to 2048 × 1366.
+- `public/images/studio-reformers-wide.webp`: client-supplied reformer room photograph, optimized to 2400 × 1600 from the higher-resolution original.
+- `public/images/studio-barre-plants.webp`: client-supplied portrait detail of the barre room, optimized to 1600 × 2400.
+- `public/images/studio-reformers-detail.webp`: client-supplied alternate reformer room angle, optimized to 2400 × 1600.
+- `public/images/team-karolina-valalikova.webp`: client-supplied Karolína Valalíková portrait, optimized to 1200 × 1800.
+- `public/images/team-sara-nemeth.webp`: client-supplied Sára Nemeth portrait, optimized to 1200 × 1649.
+- `public/images/team-mirek-danisovic.webp`: client-supplied Mirek Danišovič portrait, optimized to 1200 × 1800.
+- `public/images/team-katerina-ostapenko.webp`: client-supplied Kateřina Ostapenko portrait, optimized to 1200 × 1800.
+- `public/images/team-tereza.webp`: client-supplied Tereza portrait, optimized to 1200 × 1799 and retained for when her profile content is added.
