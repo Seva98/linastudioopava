@@ -18,7 +18,6 @@ export async function PricingSection() {
           {pricingGroups.map((group) => (
             <article className="pricing-card" key={group.title}>
               <h3>{group.title}</h3>
-              <p>{group.description}</p>
               <table>
                 <tbody>
                   {group.items.map((item) => (

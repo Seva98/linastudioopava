@@ -5,7 +5,6 @@ export type PricingItem = {
 
 export type PricingGroup = {
   title: string;
-  description: string;
   items: PricingItem[];
 };
 
@@ -15,104 +14,92 @@ export type LessonPrice = {
   currency: string;
 };
 
-const lessonOrder = [
-  "LINA Signature Barre Class",
-  "Barre",
-  "Pilates",
-  "Pilates Sculpt",
-  "Fyzio Pilates",
-  "Pilates 60+",
-  "Pilates Reformer Beginners",
-  "Pilates Reformer Flow",
-  "Pilates Reformer Advanced",
-];
-
-export const fallbackPricingGroups: PricingGroup[] = [
+const pricingCatalog = [
   {
     title: "Barre",
-    description: "Barre lekce včetně LINA Signature.",
     items: [
-      { label: "LINA Signature Barre Class", price: "300 Kč" },
-      { label: "Barre", price: "280 Kč" },
+      { label: "Barre", aliases: ["Barre"], fallbackPrice: "280 Kč" },
+      {
+        label: "Lina Signature Barre Class",
+        aliases: ["Lina Signature Barre Class"],
+        fallbackPrice: "300 Kč",
+      },
     ],
   },
   {
     title: "Pilates",
-    description: "Lekce na podložce pro různé úrovně a potřeby.",
     items: [
-      { label: "Pilates", price: "250 Kč" },
-      { label: "Pilates Sculpt", price: "250 Kč" },
-      { label: "Fyzio Pilates", price: "250 Kč" },
-      { label: "Pilates 60+", price: "200 Kč" },
+      { label: "Pilates", aliases: ["Pilates"], fallbackPrice: "250 Kč" },
+      {
+        label: "Mat Pilates",
+        aliases: ["Mat Pilates"],
+        fallbackPrice: "250 Kč",
+      },
+      {
+        label: "Fyzio Pilates",
+        aliases: ["Fyzio Pilates"],
+        fallbackPrice: "250 Kč",
+      },
     ],
   },
   {
-    title: "Pilates na reformeru",
-    description: "Beginners, Flow a Advanced v malé skupině.",
+    title: "Pilates Reformer",
     items: [
-      { label: "Reformer Beginners", price: "490 Kč" },
-      { label: "Reformer Flow", price: "490 Kč" },
-      { label: "Reformer Advanced", price: "490 Kč" },
+      {
+        label: "Pilates Reformer All Level",
+        aliases: ["Pilates Reformer All Level", "Pilates Reformer All Levels"],
+        fallbackPrice: "490 Kč",
+      },
+      {
+        label: "Pilates Advanced",
+        aliases: ["Pilates Advanced", "Pilates Reformer Advanced"],
+        fallbackPrice: "490 Kč",
+      },
     ],
   },
-];
+] as const;
+
+export const fallbackPricingGroups: PricingGroup[] = pricingCatalog.map(
+  (group) => ({
+    title: group.title,
+    items: group.items.map((item) => ({
+      label: item.label,
+      price: item.fallbackPrice,
+    })),
+  }),
+);
 
 function formatPrice(value: number, currency: string) {
   if (currency === "CZK") return `${value.toLocaleString("cs-CZ")} Kč`;
   return `${value.toLocaleString("cs-CZ")} ${currency}`;
 }
 
+function normalizeLessonName(name: string) {
+  return name.trim().replace(/\s+/g, " ").toLocaleLowerCase("cs-CZ");
+}
+
 export function buildPricingGroups(prices: LessonPrice[]): PricingGroup[] {
   const uniquePrices = new Map<string, LessonPrice>();
 
   for (const price of prices) {
-    const name = price.name.trim();
-    if (!name || uniquePrices.has(name)) continue;
-    uniquePrices.set(name, { ...price, name });
+    const normalizedName = normalizeLessonName(price.name);
+    if (!normalizedName || uniquePrices.has(normalizedName)) continue;
+    uniquePrices.set(normalizedName, price);
   }
 
-  const sorted = [...uniquePrices.values()].toSorted((left, right) => {
-    const leftIndex = lessonOrder.indexOf(left.name);
-    const rightIndex = lessonOrder.indexOf(right.name);
-    return (
-      (leftIndex < 0 ? lessonOrder.length : leftIndex) -
-      (rightIndex < 0 ? lessonOrder.length : rightIndex)
-    );
-  });
+  return pricingCatalog.map((group) => ({
+    title: group.title,
+    items: group.items.map((catalogItem) => {
+      const price = catalogItem.aliases
+        .map((alias) => uniquePrices.get(normalizeLessonName(alias)))
+        .find((candidate) => candidate !== undefined);
 
-  const barre = sorted.filter((item) => /barre/i.test(item.name));
-  const reformer = sorted.filter((item) => /reformer/i.test(item.name));
-  const pilates = sorted.filter((item) => !/barre|reformer/i.test(item.name));
-
-  const toItems = (items: LessonPrice[], stripReformer = false) =>
-    items.map((item) => ({
-      label: stripReformer
-        ? item.name.replace(/^Pilates Reformer\s*/i, "Reformer ")
-        : item.name,
-      price: formatPrice(item.value, item.currency),
-    }));
-
-  return [
-    barre.length
-      ? {
-          title: "Barre",
-          description: "Barre lekce včetně LINA Signature.",
-          items: toItems(barre),
-        }
-      : null,
-    pilates.length
-      ? {
-          title: "Pilates",
-          description: "Lekce na podložce pro různé úrovně a potřeby.",
-          items: toItems(pilates),
-        }
-      : null,
-    reformer.length
-      ? {
-          title: "Pilates na reformeru",
-          description: "Beginners, Flow a Advanced v malé skupině.",
-          items: toItems(reformer, true),
-        }
-      : null,
-  ].filter((group): group is PricingGroup => group !== null);
+      return {
+        label: catalogItem.label,
+        price: price
+          ? formatPrice(price.value, price.currency)
+          : catalogItem.fallbackPrice,
+      };
+    }),
+  }));
 }

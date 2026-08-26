@@ -41,11 +41,70 @@ test("development component gallery is available", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1, name: "Design systém" })).toBeVisible();
 });
 
-test("team page contains every supplied instructor profile", async ({ page }) => {
+test("homepage and team page use the requested instructor order and summaries", async ({ page }) => {
+  const expectedNames = [
+    "Tereza Ševčík",
+    "Miroslav Danišovič",
+    "Sára Nemeth",
+    "Kateřina Ostapenko",
+    "Karolína Valalíková",
+  ];
+  const expectedSummaries = [
+    "majitelka a zakladatelka Lina Studio, lektorka Barre a Pilates Reformer",
+    "tanečník, lektor Pilates Reformer a Barre",
+    "lektorka Pilates",
+    "tanečnice, lektorka Barre",
+    "tanečnice, lektorka Pilates Reformer a Barre",
+  ];
+
+  await page.goto("/");
+  expect(await page.locator(".team-card h3").allTextContents()).toEqual(expectedNames);
+  expect(await page.locator(".team-card > p").allTextContents()).toEqual(expectedSummaries);
+
   await page.goto("/tym");
-  for (const name of ["Karolína Valalíková", "Sára Nemeth", "Mirek Danišovič", "Kateřina Ostapenko"]) {
-    await expect(page.getByRole("heading", { level: 2, name })).toBeVisible();
-  }
+  expect(await page.locator(".instructor-profile h2").allTextContents()).toEqual(expectedNames);
+  expect(await page.locator(".instructor-profile__meta").allTextContents()).toEqual(expectedSummaries);
+});
+
+test("class details open in an accessible modal", async ({ page }) => {
+  await page.goto("/lekce");
+
+  expect(await page.locator(".class-card h3").allTextContents()).toEqual([
+    "Pilates Reformer",
+    "Barre",
+    "Mat Pilates",
+    "Individuální lekce",
+  ]);
+
+  const reformerCard = page.locator(".class-card").filter({
+    has: page.getByRole("heading", { level: 3, name: "Pilates Reformer", exact: true }),
+  });
+  const reformerTrigger = reformerCard.getByRole("button", { name: "Objevit více" });
+  await reformerTrigger.click();
+
+  const reformerDialog = page.getByRole("dialog", { name: "Pilates Reformer" });
+  await expect(reformerDialog).toBeVisible();
+  await expect(reformerDialog).toContainText(
+    "Reformer není jen o síle. Je o kvalitě pohybu, kontrole a propojení celého těla.",
+  );
+  expect(await reformerDialog.locator("strong").allTextContents()).toEqual([
+    "reformer",
+    "silou, stabilitou, flexibilitou, koordinací i kontrolou pohybu",
+    "Reformer není jen o síle. Je o kvalitě pohybu, kontrole a propojení celého těla.",
+  ]);
+
+  await page.keyboard.press("Escape");
+  await expect(reformerDialog).not.toBeVisible();
+  await expect(reformerTrigger).toBeFocused();
+
+  const matPilatesCard = page.locator(".class-card").filter({
+    has: page.getByRole("heading", { level: 3, name: "Mat Pilates", exact: true }),
+  });
+  await matPilatesCard.getByRole("button", { name: "Objevit více" }).click();
+  const matPilatesDialog = page.getByRole("dialog", { name: "Mat Pilates" });
+  await expect(matPilatesDialog).toContainText("Pilates v jeho nejčistší podobě.");
+  await matPilatesDialog.getByRole("button", { name: "Zavřít detail lekce Mat Pilates" }).click();
+  await expect(matPilatesDialog).not.toBeVisible();
 });
 
 test("desktop instructor portraits keep one size while alternating sides", async ({ page }, testInfo) => {
@@ -70,7 +129,8 @@ test("desktop instructor portraits keep one size while alternating sides", async
 test("pricing tables and studio gallery are populated", async ({ page }) => {
   await page.goto("/cenik");
   await expect(page.locator(".pricing-card table")).toHaveCount(3);
-  await expect(page.locator(".pricing-card tbody tr")).toHaveCount(9);
+  await expect(page.locator(".pricing-card > p")).toHaveCount(0);
+  await expect(page.locator(".pricing-card tbody tr")).toHaveCount(7);
 
   await page.goto("/studio");
   await expect(page.locator(".studio-gallery__item")).toHaveCount(9);

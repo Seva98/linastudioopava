@@ -2,12 +2,11 @@ import { MediaFrame } from "./media-frame";
 
 type TeamCardProps = {
   name: string;
-  role: string;
-  specialties: string;
+  summary: string;
   image: string;
 };
 
-export function TeamCard({ name, role, specialties, image }: TeamCardProps) {
+export function TeamCard({ name, summary, image }: TeamCardProps) {
   return (
     <article className="team-card">
       <MediaFrame
@@ -17,8 +16,7 @@ export function TeamCard({ name, role, specialties, image }: TeamCardProps) {
         sizes="(max-width: 720px) 52vw, 22vw"
       />
       <h3>{name}</h3>
-      <p>{role}</p>
-      <p>{specialties}</p>
+      <p>{summary}</p>
     </article>
   );
 }

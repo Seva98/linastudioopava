@@ -16,9 +16,7 @@ export function InstructorProfiles() {
               sizes="(max-width: 768px) 100vw, 38vw"
             />
             <div className="instructor-profile__content">
-              <p className="instructor-profile__meta">
-                {member.role} · {member.specialties}
-              </p>
+              <p className="instructor-profile__meta">{member.summary}</p>
               <h2>{member.name}</h2>
               <div className="instructor-profile__biography">
                 {member.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
