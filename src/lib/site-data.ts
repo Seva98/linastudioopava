@@ -3,10 +3,10 @@ export const siteConfig = {
   bookingUrl: "https://app.zenamu.com/app/office/lina-studio-opava",
   instagramUrl: "https://www.instagram.com/lina_studio_opava",
   instagramHandle: "@lina_studio_opava",
-  email: "info@linastudio.cz",
-  phone: "+420 777 123 456",
-  phoneHref: "+420777123456",
-  address: ["Olomoucká 406", "746 01 Opava 1"],
+  email: "info@linastudioopava.cz",
+  phone: "+420 736 129 088",
+  phoneHref: "+420736129088",
+  address: ["Olomoucká 406/2", "746 01 Opava 1"],
   mapCoordinates: [49.9405867, 17.8974933],
 } as const;
 
